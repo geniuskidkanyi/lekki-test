@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :authentications, only: %i[create]
   resources :users, only: %i[index]
   post "/archive", to: "users#archive_user"
-  post "/archive", to: "users#unarchive_user"
+  post "/unarchive", to: "users#unarchive_user"
 end
