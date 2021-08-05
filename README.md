@@ -115,3 +115,34 @@ $ curl --header \
         --header "Content-Type: application/json" \
         http://localhost:3189/users
 ```
+
+### List Users with filter 
+##### (GET /users)
+
+```bash
+$ curl --location --request GET 'http://localhost:3000/users' \
+--header 'Authentication: Bearer JWT_TOKEN' \
+--header 'Content-Type: application/json' \
+--data '{"user_status": "unarchived,archived" }'
+```
+
+
+### To archive user
+##### (GET /users)
+
+```bash
+$ curl --location --request POST 'http://localhost:3000/archive' \
+--header 'Authentication: Bearer JWT_TOKEN' \
+--header 'Content-Type: application/json' \
+--data '{"user_id": USER_ID}'
+```
+
+### To unarchive user
+##### (GET /users)
+
+```bash
+$ curl --location --request POST 'http://localhost:3000/unarchive' \
+--header 'Authentication: Bearer JWT_TOKEN' \
+--header 'Content-Type: application/json' \
+--data '{"user_id": USER_ID}'
+```
